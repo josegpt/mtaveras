@@ -1,16 +1,16 @@
-PREFIX ?=	${DESTDIR}/var/www
-HTDOCS_DIR =	${PREFIX}/htdocs
-STATIC_DIR =	${HTDOCS_DIR}/mtaveras
+PREFIX?=	${DESTDIR}/var/www
+HTDOCSDIR=	${PREFIX}/htdocs
+STATICDIR=	${HTDOCSDIR}/mtaveras
 
 all: static
 
 static:
-	@mkdir -p ${STATIC_DIR}
-	@cp -Rp img css *.html ${STATIC_DIR}
+	mkdir -p ${STATICDIR}
+	cp -Rp static *.html ${STATICDIR}
 
 install: all
 
 uninstall:
-	@rm -r ${STATIC_DIR}
+	rm -r ${STATICDIR}
 
 .PHONY: all static install uninstall
